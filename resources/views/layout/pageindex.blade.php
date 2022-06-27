@@ -42,6 +42,7 @@
     <!-- Spinner End -->
 
     @include('layout.header')
+    @include('layout.contentheader')
     @yield('content')
     @include('layout.footer')
 

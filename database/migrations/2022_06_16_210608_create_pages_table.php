@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            $table->string('title', 100)->nullable();
+            $table->tinyInteger('page_status')->comment('1=draft, 2=published');
+            $table->tinyInteger('status')->default('1');
         });
     }
 

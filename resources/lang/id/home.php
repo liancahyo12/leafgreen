@@ -2,6 +2,7 @@
 
 return [
 
+    'home' => 'Beranda',
     'about' => 'TENTANG',
     'product' => 'PRODUK',
     'project' => 'PROYEK',

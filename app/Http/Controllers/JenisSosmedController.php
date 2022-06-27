@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreproductRequest;
-use App\Http\Requests\UpdateproductRequest;
-use App\Models\product;
+use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class JenisSosmedController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
@@ -31,10 +24,10 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreproductRequest  $request
+     * @param  \App\Http\Requests\StorepageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreproductRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +35,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show($id)
     {
         //
     }
@@ -53,10 +46,10 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(product $product)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +57,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateproductRequest  $request
-     * @param  \App\Models\product  $product
+     * @param  \App\Http\Requests\UpdatepageRequest  $request
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateproductRequest $request, product $product)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +69,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\product  $product
+     * @param  \App\Models\page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy($id)
     {
         //
     }

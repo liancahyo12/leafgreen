@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('sosial_media', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('jenis_sosmed_id');
+            $table->string('nama');
+            $table->string('url');
+            $table->string('comment')->nullable();
+            $table->tinyInteger('status')->default('1');
         });
     }
 

@@ -1,11 +1,13 @@
-@extends('layout.index')
+@extends('layout.index',[
+    'title' => __('home.home'),
+])
 
 @section('content')
 <!-- Carousel Start -->
 <div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="owl-carousel header-carousel position-relative">
         <div class="owl-carousel-item position-relative" data-dot="<img src='img/sl1_0.jpg'>">
-            <img class="img-fluid" src="img/sl1_0.jpg" alt="">
+            <img class="img-fluid" src="img/sl2_0.jpg" alt="">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">
@@ -19,7 +21,7 @@
             </div>
         </div>
         <div class="owl-carousel-item position-relative" data-dot="<img src='img/sl2_0.jpg'>">
-            <img class="img-fluid" src="img/sl2_0.jpg" alt="">
+            <img class="img-fluid" src="img/sl1_0.jpg" alt="">
             <div class="owl-carousel-inner">
                 <div class="container">
                     <div class="row justify-content-start">

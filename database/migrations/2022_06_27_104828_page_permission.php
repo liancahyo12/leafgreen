@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('page_permissions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('page_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('title', 100)->nullable();
-            $table->string('tag')->nullable();
-            $table->string('content')->nullable();
-            $table->tinyInteger('post_status')->comment('1=draft, 2=published');
             $table->tinyInteger('status')->default('1');
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('page_permissions');
     }
 };

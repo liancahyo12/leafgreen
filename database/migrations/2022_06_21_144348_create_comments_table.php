@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -16,6 +17,11 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('post_id');
+            $table->string('nama', 100);
+            $table->string('email', 100);
+            $table->string('comment')->nullable();
+            $table->tinyInteger('status')->default('1');
         });
     }
 

@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('asets', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->string('title', 100)->nullable();
-            $table->string('tag')->nullable();
-            $table->string('content')->nullable();
-            $table->tinyInteger('post_status')->comment('1=draft, 2=published');
+            $table->string('jenis_aset', 100)->nullable();
+            $table->string('url')->nullable();
+            $table->string('aset')->nullable();
             $table->tinyInteger('status')->default('1');
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('asets');
     }
 };
