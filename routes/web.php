@@ -64,6 +64,9 @@ Route::get('/csr', [HomeController::class, 'csr'])
 Route::get('/blog', [HomeController::class, 'blog'])
             ->middleware(['Language'])
             ->name('blog');
+Route::get('/blog/{date:post_date}/{post:slug}', [HomeController::class, 'post'])
+            ->middleware(['Language'])
+            ->name('post');
 
 Route::get('/gcg', [HomeController::class, 'gcg'])
             ->middleware(['Language'])

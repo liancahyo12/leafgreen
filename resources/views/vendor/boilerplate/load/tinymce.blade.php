@@ -21,6 +21,10 @@
             statusbar: false,
             browser_spellcheck: true,
             encoding: 'UTF-8',
+            image_dimensions: false,
+            image_class_list: [
+                {title: 'Responsive', value: 'img-fluid'}
+            ],
             image_uploadtab: false,
             deprecation_warnings: false,
             paste_preprocess: function(plugin, args) {

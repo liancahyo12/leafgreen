@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
+use App\Models\post;
 use App;
 
 class HomeController extends Controller
@@ -15,7 +16,16 @@ class HomeController extends Controller
 
     function blog(){
     
-        return view("page.blog");
+        return view("page.blog", [
+            'post' => post::where([['status', '=', 1], ['post_status', '=', 2]])->get(),
+        ]);
+    }
+
+    function post($date, $post){
+    
+        return view("page.post", [
+            'post' => post::where([['status', '=', 1], ['post_status', '=', 2], ['post_date', '=', $date], ['slug', '=', $post]])->first(),
+        ]);
     }
 
     function ceo(){

@@ -21,6 +21,13 @@
             browser_spellcheck: true,
             encoding: 'UTF-8',
             image_uploadtab: false,
+            image_dimensions: false,
+            image_class_list: [
+                {title: 'Responsive', value: 'img-fluid'}
+            ],
+            tiny_pageembed_classes: [
+                { text: 'Responsive', value: 'my-big-class' }
+            ],
             deprecation_warnings: false,
             paste_preprocess: function(plugin, args) {
                 args.content = args.content.replace(/<(\/)*(\\?xml:|meta|link|span|font|del|ins|st1:|[ovwxp]:)((.|\s)*?)>/gi, ''); // Unwanted tags

@@ -7,7 +7,7 @@ return [
     'product' => 'PRODUCT',
     'project' => 'PROJECT',
     'csr' => 'CSR',
-    'blog' => 'BlOG',
+    'blog' => 'BLOG',
     'gcg' => 'GCG',
     'media' => 'MEDIA',
     'contactus' => 'Contact Us',

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->string('title', 100)->nullable();
+            $table->string('slug')->nullable();
+            $table->string('tumbnail')->nullable();
             $table->string('tag')->nullable();
             $table->string('content')->nullable();
             $table->tinyInteger('post_status')->comment('1=draft, 2=published');

@@ -83,4 +83,9 @@ class PostController extends Controller
     {
         //
     }
+
+    public function get_tumb($id)
+    {
+        
+    }
 }
