@@ -1,13 +1,21 @@
 @extends('layout.pageindex',[
-    'title' => __('home.blog'),
-    'subtitle' => __('home.blog'),
+    'title' => __('home.media'),
+    'subtitle' => __('home.media'),
     'breadcrumb' => [
         __('home.home') => 'home',
-        __('home.blog')
+        __('home.media')
     ]
 ])
 
 @section('content')
+<style>
+    .txt-blog {
+      color: #191919;
+      transition: 0.3s;
+    }
+    
+    .txt-blog:hover {color: #32C36C;}
+</style>
 <!-- Projects Start -->
 <div class="container-xxl py-5">
     <div class="container">
@@ -20,11 +28,11 @@
                             <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ url('blog/'.$item->post_date.'/'.$item->slug )  }}"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Solar Panels</p>
-                        <hr class="text-primary w-25 my-2">
+                    <div class="pt-1">
+                        <div class="text-primary">{{ substr($item->post_date, 0, 10) }} | {{ $item->category }}</div>
+                        <hr class="text-primary w-25 my-1">
                         <a href="{{ url('blog/'.$item->post_date.'/'.$item->slug ) }}">
-                            <h4 class="lh-base">{{ $item->title }}</h4>
+                            <h2 class="txt-blog lh-base">{{ $item->title }}</h4>
                         </a>
                     </div>
                 </div>

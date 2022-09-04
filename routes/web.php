@@ -46,7 +46,7 @@ Route::get('/about/visimisi', [HomeController::class, 'visimisi'])
             ->middleware(['Language'])
             ->name('visimisi');
 
-Route::get('/product', [HomeController::class, 'product'])
+Route::get('/product/readymix', [HomeController::class, 'product'])
             ->middleware(['Language'])
             ->name('product');
 

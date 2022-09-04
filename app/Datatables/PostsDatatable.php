@@ -5,6 +5,8 @@ namespace App\Datatables;
 use Sebastienheyd\Boilerplate\Datatables\Button;
 use Sebastienheyd\Boilerplate\Datatables\Column;
 use Sebastienheyd\Boilerplate\Datatables\Datatable;
+use App\Models\post;
+use Auth;
 
 class PostsDatatable extends Datatable
 {
@@ -12,6 +14,10 @@ class PostsDatatable extends Datatable
 
     public function datasource()
     {
+        if (Auth::user()->hasRole('admin')) {
+            # code...
+        }
+        // $post = post::where();
     }
 
     public function setUp()

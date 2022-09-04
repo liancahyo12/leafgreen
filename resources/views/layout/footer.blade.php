@@ -4,14 +4,14 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Address</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Ruko North Junction Blok RB/23, Sambikerep, Surabaya</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>(+62) 31 7425555,7426666</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>semen_indogreensentosa@yahoo.com</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Comal 20, Keputran, Tegalsari, Surabaya 6026</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 - 99545254</p>
+                {{-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>semen_indogreensentosa@yahoo.com</p> --}}
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.instagram.com/ptsemenindogreen/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.facebook.com/ptsemenindogreen/ " target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.youtube.com/channel/UCHa1aybYZKEhMd3CSyQqO5g" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.linkedin.com/company/82363188/admin/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

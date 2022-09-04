@@ -31,6 +31,14 @@
     <link rel="stylesheet" href="{{ mix('css/bootstrap.min.css') }}">
     <!-- Template Stylesheet -->
     {{-- <link href="css/style.css" rel="stylesheet"> --}}
+    <style>
+        .txt-bread {
+          color: white;
+          transition: 0.3s;
+        }
+        
+        .txt-bread:hover {color: #65e498;}
+    </style>
 </head>
 <body>
     <!-- Spinner Start -->

@@ -122,9 +122,9 @@ CodeMirror.defineMode("sql", function(config, parserConfig) {
       if (dateSQL.hasOwnProperty(word) && (stream.match(/^( )+'[^']*'/) || stream.match(/^( )+"[^"]*"/)))
         return "number";
       if (atoms.hasOwnProperty(word)) return "atom";
-      if (builtin.hasOwnProperty(word)) return "type";
+      if (builtin.hasOwnProperty(word)) return "builtin";
       if (keywords.hasOwnProperty(word)) return "keyword";
-      if (client.hasOwnProperty(word)) return "builtin";
+      if (client.hasOwnProperty(word)) return "string-2";
       return null;
     }
   }
