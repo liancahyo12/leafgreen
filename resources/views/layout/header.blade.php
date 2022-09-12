@@ -12,18 +12,18 @@
         <div class="col-lg-7 px-5 text-start">
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="fa fa-map-marker-alt me-2"></small>
-                <small>Jl. Comal 20, Keputran, Tegalsari, Surabaya 60265</small>
+                <small>{{ App\Models\company::where('status', 1)->first()->alamat }}</small>
             </div>
         </div>
         <div class="col-lg-5 px-5 text-end">
             <div class="h-100 d-inline-flex align-items-center me-4">
                 <small class="fa fa-phone-alt me-2"></small>
-                <small>031 - 99545254</small>
+                <small>{{ App\Models\company::where('status', 1)->first()->no_telp }}</small>
             </div>
             <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-outline-light rounded-0 border-0 border-end border-secondary" href="https://www.facebook.com/ptsemenindogreen/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square btn-outline-light rounded-0 border-0 border-end border-secondary" href="https://www.youtube.com/channel/UCHa1aybYZKEhMd3CSyQqO5g" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-square btn-outline-light rounded-0 border-0 border-end border-secondary" href="https://www.instagram.com/ptsemenindogreen/" target="_blank"><i class="fab fa-instagram"></i></a>
+                @foreach (App\Models\sosial_media::leftJoin('jenis_sosmeds', 'jenis_sosmeds.id', 'jenis_sosmed_id')->where('sosial_media.status', 1)->get(); as $position)
+                    <a class="btn btn-square btn-outline-light rounded-0 border-0 border-end border-secondary" href="{{ $position->url }}" target="_blank"><i class="fab fa-{{ $position->logo }}"></i></a>
+                @endforeach
                 <div>
                     <select onchange="changeLanguage(this.value)" style="background-color: hsla(89, 100%, 100%, 0.3);">
                         <option {{session()->has('lang_code')?(session()->get('lang_code')=='id'?'selected':''):''}} value="id" style="background-image:url(img/id.png);">IND</option>

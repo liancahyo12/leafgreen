@@ -4,14 +4,13 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Address</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Jl. Comal 20, Keputran, Tegalsari, Surabaya 6026</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031 - 99545254</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{ App\Models\company::where('status', 1)->first()->alamat }}</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{ App\Models\company::where('status', 1)->first()->no_telp }}</p>
                 {{-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>semen_indogreensentosa@yahoo.com</p> --}}
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.instagram.com/ptsemenindogreen/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.facebook.com/ptsemenindogreen/ " target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.youtube.com/channel/UCHa1aybYZKEhMd3CSyQqO5g" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light btn-social" href="https://www.linkedin.com/company/82363188/admin/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    @foreach (App\Models\sosial_media::leftJoin('jenis_sosmeds', 'jenis_sosmeds.id', 'jenis_sosmed_id')->where('sosial_media.status', 1)->get(); as $position)
+                        <a class="btn btn-square btn-outline-light btn-social" href="{{ $position->url }}" target="_blank"><i class="fab fa-{{ $position->logo }}"></i></a>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -23,36 +22,54 @@
                 <a class="btn btn-link" href="">{{__("home.certifications")}}</a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Project Gallery</h5>
+                <h5 class="text-white mb-4">Our Latest Projects</h5>
                 <div class="row g-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-1.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-1.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-1.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-2.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-1a.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-1a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-3.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-2.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-4.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-2a.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-5.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-3.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded" src="img/gallery-6.jpg" alt="">
+                    <div class="portfolio-img col-4">
+                        <img class="img-fluid rounded" src="{{ mix('img/pr-3a.png') }}" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Newsletter</h5>
                 <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div class="container">
@@ -63,8 +80,8 @@
                 </div>                
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    {{-- Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a> --}}
                 </div>
             </div>
         </div>

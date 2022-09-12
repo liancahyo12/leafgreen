@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorecompanyRequest;
 use App\Http\Requests\UpdatecompanyRequest;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\company;
 
 class CompanyController extends Controller
@@ -15,7 +17,10 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        return view('boilerplate::company.index', 
+                [
+                    'company' => company::where('status', 1)->first(),
+                ]);
     }
 
     /**
@@ -56,9 +61,12 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit(company $company)
+    public function edit()
     {
-        //
+        return view('boilerplate::company.edit', 
+                [
+                    'company' => company::where('status', 1)->first(),
+                ]);
     }
 
     /**
@@ -68,9 +76,32 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatecompanyRequest $request, company $company)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, [
+                'nama' => 'required',
+                'no_telp'  => 'required',
+                'email'  => 'required',
+                'bplant'  => 'required',
+                'tmixer'  => 'required',
+                'cpump'  => 'required',
+                'wloader'  => 'required',
+        ]);
+
+        $input = company::where('status', 1)->first();
+
+        $input['nama'] = $request->nama;
+        $input['no_telp'] = $request->no_telp;
+        $input['email'] = $request->email;
+        $input['bplant'] = $request->bplant;
+        $input['tmixer'] = $request->tmixer;
+        $input['cpump'] = $request->cpump;
+        $input['wloader'] = $request->wloader;
+
+        $sosmed = $input->save();
+
+        return redirect()->route('boilerplate.company')
+                            ->with('growl', [__('Data perusahaan berhasil diubah'), 'success']);
     }
 
     /**

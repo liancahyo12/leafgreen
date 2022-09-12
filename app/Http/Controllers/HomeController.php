@@ -5,13 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 use App\Models\post;
+use App\Models\sosial_media;
+use App\Models\company;
+use App\Models\client;
 use App;
 
 class HomeController extends Controller
 {
     function index(){
     
-        return view("page.welcome");
+        return view("page.welcome", [
+                    'company' => company::where('status', 1)->first(),
+                    'client' => client::where('status', 1)->get(),
+                ]);
     }
 
     function blog(){

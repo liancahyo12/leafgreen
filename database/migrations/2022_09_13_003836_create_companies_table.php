@@ -17,11 +17,15 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama', 100);
-            $table->string('logo', 100);
+            $table->string('logo');
             $table->string('alamat')->nullable();
             $table->string('email')->nullable();
             $table->string('no_telp')->nullable();
             $table->string('no_hp')->nullable();
+            $table->integer('bplant')->nullable();
+            $table->integer('tmixer')->nullable();
+            $table->integer('cpump')->nullable();
+            $table->integer('wloader')->nullable();
             $table->tinyInteger('status')->default('1');
         });
     }

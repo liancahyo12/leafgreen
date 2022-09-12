@@ -53,42 +53,45 @@
 <!-- Feature Start -->
 <div class="container-xxl py-5">
     <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="text-dark">Our Resources</h1>
+        </div>
         <div class="row g-5">
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
                         <i class="fa fa-users text-white"></i>
                     </div>
-                    <h1 class="mb-0" data-toggle="counter-up">3453</h1>
+                    <h1 class="mb-0" data-toggle="counter-up">{{ $company->bplant }}</h1>
                 </div>
-                <h5 class="mb-3">Happy Customers</h5>
+                <h5 class="mb-3">Batching Plant</h5>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
                         <i class="fa fa-check text-white"></i>
                     </div>
-                    <h1 class="mb-0" data-toggle="counter-up">4234</h1>
+                    <h1 class="mb-0" data-toggle="counter-up">{{ $company->tmixer }}</h1>
                 </div>
-                <h5 class="mb-3">Project Done</h5>
+                <h5 class="mb-3">Truck Mixer</h5>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
                         <i class="fa fa-award text-white"></i>
                     </div>
-                    <h1 class="mb-0" data-toggle="counter-up">3123</h1>
+                    <h1 class="mb-0" data-toggle="counter-up">{{ $company->cpump }}</h1>
                 </div>
-                <h5 class="mb-3">Awards Win</h5>
+                <h5 class="mb-3">Concrete Pump</h5>
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                 <div class="d-flex align-items-center mb-4">
                     <div class="btn-lg-square bg-primary rounded-circle me-3">
                         <i class="fa fa-users-cog text-white"></i>
                     </div>
-                    <h1 class="mb-0" data-toggle="counter-up">1831</h1>
+                    <h1 class="mb-0" data-toggle="counter-up">{{ $company->wloader }}</h1>
                 </div>
-                <h5 class="mb-3">Expert Workers</h5>
+                <h5 class="mb-3">Wheel Loader</h5>
             </div>
         </div>
     </div>
@@ -196,45 +199,6 @@
             </div>
             <div class="col-lg-4 col-md-6 portfolio-item">
                 <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="{{ mix('img/pr-2.png') }}" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Bendungan</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Proyek Bendungan Leuwikeris Paket IV</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="{{ mix('img/pr-3.png') }}" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Bendungan</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Proyek Bendungan Leuwikeris</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item">
-                <div class="portfolio-img rounded overflow-hidden">
-                    <img class="img-fluid" src="{{ mix('img/pr-4.png') }}" alt="">
-                    <div class="portfolio-btn">
-                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-4.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <p class="text-primary mb-0">Bendungan</p>
-                    <hr class="text-primary w-25 my-2">
-                    <h5 class="lh-base">Proyek Bendungan Leuwikeris Paket V</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item">
-                <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ mix('img/pr-1a.png') }}" alt="">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-1a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -244,6 +208,19 @@
                     <p class="text-primary mb-0">Jalan Tol</p>
                     <hr class="text-primary w-25 my-2">
                     <h5 class="lh-base">Proyek Jalan Tol Sumatera Binjai - Stabat</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="{{ mix('img/pr-2.png') }}" alt="">
+                    <div class="portfolio-btn">
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <p class="text-primary mb-0">Bendungan</p>
+                    <hr class="text-primary w-25 my-2">
+                    <h5 class="lh-base">Proyek Bendungan Leuwikeris Paket IV</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 portfolio-item">
@@ -261,6 +238,19 @@
             </div>
             <div class="col-lg-4 col-md-6 portfolio-item">
                 <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="{{ mix('img/pr-3.png') }}" alt="">
+                    <div class="portfolio-btn">
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <p class="text-primary mb-0">Bendungan</p>
+                    <hr class="text-primary w-25 my-2">
+                    <h5 class="lh-base">Proyek Bendungan Leuwikeris</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-img rounded overflow-hidden">
                     <img class="img-fluid" src="{{ mix('img/pr-3a.png') }}" alt="">
                     <div class="portfolio-btn">
                         <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
@@ -270,6 +260,19 @@
                     <p class="text-primary mb-0">Jalan Tol</p>
                     <hr class="text-primary w-25 my-2">
                     <h5 class="lh-base">Proyek Jalan Tol Sumatera Binjai - Stabat</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-img rounded overflow-hidden">
+                    <img class="img-fluid" src="{{ mix('img/pr-4.png') }}" alt="">
+                    <div class="portfolio-btn">
+                        <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-4.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <p class="text-primary mb-0">Bendungan</p>
+                    <hr class="text-primary w-25 my-2">
+                    <h5 class="lh-base">Proyek Bendungan Leuwikeris Paket V</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 portfolio-item">
@@ -297,122 +300,14 @@
             <h6 class="text-primary">Testimonial</h6>
             <h1 class="mb-4">Our Clients</h1>
         </div>
-        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-1.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Hutama Karya</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-2.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Hutama Karya Aspal Beton</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-3.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Adhi Karya</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-4.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Hutama Karya Infrastruktur</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-5.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Wika</h5>
-                    <span class="fst-italic">PT Wijaya Karya</span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-6.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Shimizu Corporation</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-7.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">PT Tatamulia Nusantara Indah</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-8.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Ciputra</h5>
-                    <span class="fst-italic"></span>
-                </div>
-            </div>
-            <div class="testimonial-item text-center">
-                <div class="testimonial-img position-relative">
-                    <img class="img-fluid rounded-circle mx-auto mb-5" src="{{ mix('img/cl-9.png') }}">
-                    <div class="btn-square bg-primary rounded-circle">
-                        <i class="fa fa-quote-left text-white"></i>
-                    </div>
-                </div>
-                <div class="testimonial-text text-center rounded p-4">
-                    <p></p>
-                    <h5 class="mb-1">Waskita Karya</h5>
-                    <span class="fst-italic"></span>
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row row-cols-5">
+                    @foreach ($client as $position)
+                        <div class="col">
+                            <img class="img-fluid mx-auto mb-5" width="150" src="{{ mix($position->logo) }}">
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

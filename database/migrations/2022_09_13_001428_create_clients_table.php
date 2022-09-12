@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sosial_media', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('jenis_sosmed_id');
-            $table->string('nama')->nullable();
-            $table->string('url');
-            $table->string('comment')->nullable();
+            $table->string('nama', 100);
+            $table->string('logo');
+            $table->string('comment');
             $table->tinyInteger('status')->default('1');
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sosial_media');
+        Schema::dropIfExists('clients');
     }
 };

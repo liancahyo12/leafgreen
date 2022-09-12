@@ -12,6 +12,10 @@ use App\Http\Controllers\Boilerplate\Users\RolesController;
 use App\Http\Controllers\Boilerplate\Users\UsersController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\SosialMediaController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ClientController;
 
 Route::group([
     'prefix'     => config('boilerplate.app.prefix', ''),
@@ -139,5 +143,85 @@ Route::group([
         Route::delete('/delete-page/{id}', [PagesController::class, 'destroy'])
             ->middleware(['boilerplateauth', 'ability:admin,delete_page'])
             ->name('delete-page');
+
+        // Sosmed
+        Route::get('/social', [SosialMediaController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_social'])
+            ->name('socials');
+        Route::get('/create-social', [SosialMediaController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_social'])
+            ->name('create-social');
+        Route::post('/create-social', [SosialMediaController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_social'])
+            ->name('store-social');
+        Route::get('/edit-social/{id}', [SosialMediaController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_social'])
+            ->name('edit-social');
+        Route::put('/edit-social/{id}', [SosialMediaController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_social'])
+            ->name('update-social');
+        Route::delete('/delete-social/{id}', [SosialMediaController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_social'])
+            ->name('delete-social');
+
+        // Portofolio
+        Route::get('/portfolio', [PortfolioController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_portfolio'])
+            ->name('portfolios');
+        Route::get('/create-portfolio', [PortfolioController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_portfolio'])
+            ->name('create-portfolio');
+        Route::post('/create-portfolio', [PortfolioController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_portfolio'])
+            ->name('store-portfolio');
+        Route::get('/edit-portfolio/{id}', [PortfolioController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_portfolio'])
+            ->name('edit-portfolio');
+        Route::put('/edit-portfolio/{id}', [PortfolioController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_portfolio'])
+            ->name('update-portfolio');
+        Route::delete('/delete-portfolio/{id}', [PortfolioController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_portfolio'])
+            ->name('delete-portfolio');
+        
+        // Clients
+        Route::get('/client', [ClientController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_client'])
+            ->name('clients');
+        Route::get('/create-client', [ClientController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_client'])
+            ->name('create-client');
+        Route::post('/create-client', [ClientController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_client'])
+            ->name('store-client');
+        Route::get('/edit-client/{id}', [ClientController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_client'])
+            ->name('edit-client');
+        Route::put('/edit-client/{id}', [ClientController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_client'])
+            ->name('update-client');
+        Route::delete('/delete-client/{id}', [ClientController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_client'])
+            ->name('delete-client');
+
+        // Perusahaan
+        Route::get('/company', [CompanyController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_company'])
+            ->name('company');
+        Route::get('/create-company', [CompanyController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_company'])
+            ->name('create-company');
+        Route::post('/create-company', [CompanyController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_company'])
+            ->name('store-company');
+        Route::get('/edit-company', [CompanyController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_company'])
+            ->name('edit-company');
+        Route::put('/edit-company', [CompanyController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_company'])
+            ->name('update-company');
+        Route::delete('/delete-company/{id}', [CompanyController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_company'])
+            ->name('delete-company');
     });
 });
