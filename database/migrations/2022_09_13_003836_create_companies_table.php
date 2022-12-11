@@ -26,6 +26,12 @@ return new class extends Migration
             $table->integer('tmixer')->nullable();
             $table->integer('cpump')->nullable();
             $table->integer('wloader')->nullable();
+            $table->text('history')->nullable();
+            $table->string('visi')->nullable();
+            $table->text('misi')->nullable();
+            $table->string('structure_org')->nullable();
+            $table->text('ceo_greet')->nullable();
+            $table->text('profile')->nullable();
             $table->tinyInteger('status')->default('1');
         });
     }

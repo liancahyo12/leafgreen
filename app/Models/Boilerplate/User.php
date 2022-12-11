@@ -14,6 +14,7 @@ use App\Events\Boilerplate\UserDeleted;
 use App\Notifications\Boilerplate\NewUser;
 use App\Notifications\Boilerplate\ResetPassword;
 use App\Notifications\Boilerplate\VerifyEmail;
+use App\Models\Post;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -245,5 +246,10 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return $setting;
+    }
+
+    public function Post()
+    {
+        return $this->hasMany(Post::class);
     }
 }

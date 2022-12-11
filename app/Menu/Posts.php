@@ -13,7 +13,7 @@ class Posts
             'active' => 'boilerplate.posts,boilerplate.create-post,boilerplate.edit-post',
             'permission' => 'show_post',
             'icon' => 'newspaper',
-            'order' => 1002,
+            'order' => 1008,
         ]);
     }
 }

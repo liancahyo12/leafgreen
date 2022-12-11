@@ -12,13 +12,14 @@
 <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
     <div class="container contact px-lg-0">
         <div class="row g-0 mx-lg-0">
-            <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 ps-lg-0">
                     <h6 class="text-primary">Contact Us</h6>
                     <h1 class="mb-4">Feel Free To Contact Us</h1>
                     <form>
                         <div class="row g-3">
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
@@ -41,9 +42,10 @@
                                     <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-12">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                <a id="emailLnk" class="" href="mailto:{{ $company->email }}" target="_blank">
+                                <span class="btn btn-primary rounded-pill py-3 px-5" type="submit">Send Message</span></a>
                             </div>
                         </div>
                     </form>
@@ -61,5 +63,4 @@
     </div>
 </div>
 <!-- Contact End -->
-
 @endsection

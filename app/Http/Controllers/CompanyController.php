@@ -86,6 +86,10 @@ class CompanyController extends Controller
                 'tmixer'  => 'required',
                 'cpump'  => 'required',
                 'wloader'  => 'required',
+                'history'  => 'required',
+                'visi'  => 'required',
+                'misi'  => 'required',
+                'structure_org'  => 'required',
         ]);
 
         $input = company::where('status', 1)->first();
@@ -97,6 +101,12 @@ class CompanyController extends Controller
         $input['tmixer'] = $request->tmixer;
         $input['cpump'] = $request->cpump;
         $input['wloader'] = $request->wloader;
+        $input['history'] = $request->history;
+        $input['visi'] = $request->visi;
+        $input['misi'] = $request->misi;
+        $input['ceo_greet'] = $request->ceo_greet;
+        $input['profile'] = $request->profile;
+        $input['structure_org'] = $request->structure_org;
 
         $sosmed = $input->save();
 

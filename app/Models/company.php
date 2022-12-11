@@ -20,5 +20,12 @@ class company extends Model
         'tmixer',
         'cpump',
         'wloader',
+        'history',
+        'visi',
+        'misi',
+        'ceo_greet',
+        'profile',
+        'misi',
+        'structure_org',
     ];  
 }

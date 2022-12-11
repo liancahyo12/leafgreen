@@ -24,9 +24,9 @@ Route::get('/about/advisor', [HomeController::class, 'advisor'])
 Route::get('/about/affiliations', [HomeController::class, 'affiliations'])
             ->middleware(['Language'])
             ->name('affiliations');
-Route::get('/about/awards', [HomeController::class, 'awards'])
-            ->middleware(['Language'])
-            ->name('awards');
+// Route::get('/about/awards', [HomeController::class, 'awards'])
+//             ->middleware(['Language'])
+//             ->name('awards');
 Route::get('/about/ceo', [HomeController::class, 'ceo'])
             ->middleware(['Language'])
             ->name('ceo');
@@ -46,16 +46,19 @@ Route::get('/about/visimisi', [HomeController::class, 'visimisi'])
             ->middleware(['Language'])
             ->name('visimisi');
 
-Route::get('/product/readymix', [HomeController::class, 'product'])
+Route::get('/product', [HomeController::class, 'product'])
             ->middleware(['Language'])
             ->name('product');
+Route::get('/product/{product:slug}', [HomeController::class, 'product_p'])
+            ->middleware(['Language'])
+            ->name('product_p');
 
 Route::get('/project/portfolio', [HomeController::class, 'portfolio'])
             ->middleware(['Language'])
             ->name('portfolio');
-Route::get('/project/report', [HomeController::class, 'report'])
+Route::get('/portfolio/{date:created_at}/{portfolio:slug}', [HomeController::class, 'portfolio_p'])
             ->middleware(['Language'])
-            ->name('report');
+            ->name('portfolio_p');
 
 Route::get('/csr', [HomeController::class, 'csr'])
             ->middleware(['Language'])

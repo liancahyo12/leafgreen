@@ -24,42 +24,14 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Our Latest Projects</h5>
                 <div class="row g-2">
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-1.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-1.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                    @foreach (App\Models\portfolio::where('status', 1)->get(); as $position)
+                        <div class="portfolio-img col-4">
+                            <img class="img-fluid rounded" src="{{ $position->foto }}" alt="">
+                            <div class="portfolio-btn">
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ $position->foto }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-1a.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-1a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-2.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-2a.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-2a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-3.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                    <div class="portfolio-img col-4">
-                        <img class="img-fluid rounded" src="{{ mix('img/pr-3a.png') }}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ mix('img/pr-3a.png') }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             {{-- <div class="col-lg-3 col-md-6">

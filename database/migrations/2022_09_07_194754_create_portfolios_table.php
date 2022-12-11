@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('judul', 100);
+            $table->string('slug')->nullable();
             $table->string('sub_judul');
             $table->string('foto');
+            $table->text('content')->nullable();
             $table->tinyInteger('status')->default('1');
         });
     }

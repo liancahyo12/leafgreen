@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Menu;
+
+use Sebastienheyd\Boilerplate\Menu\Builder;
+
+class Sertifikat
+{
+    public function make(Builder $menu)
+    {
+        $menu->add('Sertifikat', [
+            'route' => 'boilerplate.certifications',
+            'active' => 'boilerplate.certifications,boilerplate.create-certification,boilerplate.edit-certification',
+            'permission' => 'show_certification',
+            'icon' => 'certificate',
+            'order' => 1005,
+        ]);
+    }
+}

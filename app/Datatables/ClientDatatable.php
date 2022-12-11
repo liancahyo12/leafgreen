@@ -36,8 +36,12 @@ class ClientDatatable extends Datatable
             Column::add('Nama')
                 ->data('nama'),
 
-            Column::add('Logo')
-                ->data('logo'),
+                Column::add('Logo')
+                ->data('logo', function (client $client) {
+                    $badge1 = '<a target="_blank" href="'.$client->logo.'"><img src="'.$client->logo.'" class="img-fluid mb-2" alt="logo" height=10 width=30>
+                    </a>';
+                    return join([$badge1]);
+                }),
 
             Column::add('Aksi')
                 ->actions(function(client $client) {

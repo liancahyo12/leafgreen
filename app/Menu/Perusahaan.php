@@ -10,10 +10,10 @@ class Perusahaan
     {
         $menu->add('Perusahaan', [
             'route' => 'boilerplate.company',
-            'active' => 'boilerplate.company',
+            'active' => 'boilerplate.company,boilerplate.edit-company',
             'permission' => 'show_company',
             'icon' => 'building',
-            'order' => 100,
+            'order' => 1001,
         ]);
     }
 }

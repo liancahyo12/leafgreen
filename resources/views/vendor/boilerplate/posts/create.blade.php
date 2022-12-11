@@ -10,8 +10,11 @@
     <x-boilerplate::form :route="['boilerplate.store-post']" method="post" files>
         @csrf
         <x-boilerplate::card>
-            <x-boilerplate::tinymce name="tinymce">
-                <h2>TinyMCE demo</h2><p>Lorem ipsum dolor sit amet.</p>
+            <x-boilerplate::datetimepicker name="post_date" format="DD-MM-YYYY HH:MM:ss" label="Post Date*" required/>
+            <x-boilerplate::input name="title" label='Title*' required/>
+            <x-boilerplate::input name="category" label='Category*' required/>
+            <x-boilerplate-media-manager::image name="tumbnail" label="Thumbnail" required/>
+            <x-boilerplate::tinymce name="content">
             </x-boilerplate::tinymce>
         </x-boilerplate::card>
         <div class="row">

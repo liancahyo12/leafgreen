@@ -9,6 +9,6 @@
     <x-slot name="tools">
         <a href="/admin/create-portfolio"><button class="btn btn-primary">Tambah</button></a>
     </x-slot>
-            <x-boilerplate::datatable name="social"/>
+            <x-boilerplate::datatable name="portfolio"/>
     </x-boilerplate::card>
 @endsection

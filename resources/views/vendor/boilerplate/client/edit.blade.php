@@ -9,8 +9,7 @@
     @csrf
     <x-boilerplate::card>
         <x-boilerplate::input name="nama" label="Nama*" value="{{ $client->nama }}" required />
-        <x-boilerplate::input name="logo" label="Logo*" value="{{ $client->logo }}" required />
-
+        <x-boilerplate-media-manager::image name="logo" label="Logo* (500px*500px)" value="{{ $client->logo }}"  required/>
         <div class="row">
             &nbsp; &nbsp;
             {{ Form::submit('Kirim', array('class' => 'btn btn-primary', 'name' => 'submitbutton')) }}

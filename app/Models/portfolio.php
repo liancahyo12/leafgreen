@@ -13,5 +13,7 @@ class portfolio extends Model
         'judul',
         'sub_judul',
         'foto',
+        'slug',
+        'content',
     ];  
 }

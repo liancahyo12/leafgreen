@@ -23,7 +23,7 @@
             @foreach ($post as $item)
                 <div class="col-lg-4 col-md-6 portfolio-item">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/img-600x400-6.jpg" alt="">
+                        <img class="img-responsive" src="{{ $item->tumbnail }}" alt="" height="300">
                         <div class="portfolio-btn">
                             <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ url('blog/'.$item->post_date.'/'.$item->slug )  }}"><i class="fa fa-eye"></i></a>
                         </div>

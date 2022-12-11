@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreportfolioRequest;
 use App\Http\Requests\UpdateportfolioRequest;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\portfolio;
+use Illuminate\Support\Str;
 
 class PortfolioController extends Controller
 {
@@ -25,7 +28,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        //
+        return view('boilerplate::portfolio.create');
     }
 
     /**
@@ -34,9 +37,24 @@ class PortfolioController extends Controller
      * @param  \App\Http\Requests\StoreportfolioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreportfolioRequest $request)
+    public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+                'judul' => 'required',
+                'sub_judul'  => 'required',
+                'foto'  => 'required',
+        ]);
+
+        $input['judul'] = $request->judul;
+        $input['sub_judul'] = $request->sub_judul;
+        $input['foto'] = $request->foto;
+        $input['slug'] = Str::slug($request->judul);
+        $input['content'] = $request->content;
+
+        $portfolio = portfolio::create($input);
+
+        return redirect()->route('boilerplate.portfolios')
+                            ->with('growl', [__('Portofolio berhasil ditambah'), 'success']);
     }
 
     /**
@@ -45,7 +63,7 @@ class PortfolioController extends Controller
      * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function show(portfolio $portfolio)
+    public function show($id)
     {
         //
     }
@@ -56,9 +74,10 @@ class PortfolioController extends Controller
      * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function edit(portfolio $portfolio)
+    public function edit($id)
     {
-        //
+        $portfolio = portfolio::where('id', $id)->first();
+        return view('boilerplate::portfolio.edit', compact('portfolio'));
     }
 
     /**
@@ -68,9 +87,26 @@ class PortfolioController extends Controller
      * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateportfolioRequest $request, portfolio $portfolio)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+                'judul' => 'required',
+                'sub_judul'  => 'required',
+                'foto'  => 'required',
+        ]);
+
+        $input = portfolio::where('id', $id)->first();
+
+        $input['judul'] = $request->judul;
+        $input['sub_judul'] = $request->sub_judul;
+        $input['foto'] = $request->foto;
+        $input['slug'] = Str::slug($request->judul);
+        $input['content'] = $request->content;
+
+        $portfolio = $input->save();
+
+        return redirect()->route('boilerplate.portfolios')
+                            ->with('growl', [__('Portofolio berhasil ditambah'), 'success']);
     }
 
     /**
@@ -79,8 +115,15 @@ class PortfolioController extends Controller
      * @param  \App\Models\portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(portfolio $portfolio)
+    public function destroy($id)
     {
-        //
+        $send = portfolio::where('id', $id)->first();
+        if ($send->send_status==0) {
+            $send['status'] = 0;
+            $dele = $send->save();
+        }else {
+            return redirect()->route('boilerplate.portfolios')
+                            ->with('growl', [__('Tidak dapat dihapus'), 'danger']);
+        }
     }
 }

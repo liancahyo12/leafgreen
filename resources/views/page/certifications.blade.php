@@ -22,56 +22,18 @@
     <div class="container">
         <div class="column-content wow fadeInUp">
             <table>
-                <tr style="height:130px">
-                    <td>
-                        <img src="/img/iso-14001.png" alt="iso 14001" height="100px">
-                    </td>
-                    <td style="width:5%"></td>
-                    <td>
-                        <h4 class="text-dark wow fadeInUp">ISO 14001 - 2015</h4>
-                        <p class="text-dark">Sistem Manajemen Lingkungan</p>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td>
-                        <img src="/img/iso-45001.png" alt="iso 14001" height="100px">
-                    </td>
-                    <td style="width:5%"></td>
-                    <td>
-                        <h4 class="text-dark wow fadeInUp">ISO 45001 - 2018</h4>
-                        <p class="text-dark">Sistem Manajemen Kesehatan dan Keselamatan Kerja</p>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td>
-                        <img src="/img/iso-9001.png" alt="iso 14001" height="100px">
-                    </td>
-                    <td style="width:5%"></td>
-                    <td>
-                        <h4 class="text-dark wow fadeInUp">ISO 9001 - 2015</h4>
-                        <p class="text-dark">Standar Manajemen Mutu</p>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td>
-                        <img src="/img/iso.png" alt="iso 14001" height="100px">
-                    </td>
-                    <td style="width:5%"></td>
-                    <td>
-                        <h4 class="text-dark wow fadeInUp">ISO 31000 - 2018</h4>
-                        <p class="text-dark">Manajemen Risiko</p>
-                    </td>
-                </tr>
-                <tr style="height:130px">
-                    <td>
-                        <img src="/img/iso.png" alt="iso 14001" height="100px">
-                    </td>
-                    <td style="width:5%"></td>
-                    <td>
-                        <h4 class="text-dark wow fadeInUp">ISO 37001 - 2016</h4>
-                        <p class="text-dark">Sistem Manajemen Anti Penyuapan</p>
-                    </td>
-                </tr>
+                @foreach ($certification as $position)
+                    <tr style="height:130px">
+                        <td>
+                            <img src="{{ $position->logo }}" alt="iso 14001" height="100px">
+                        </td>
+                        <td style="width:5%"></td>
+                        <td>
+                            <h4 class="text-dark wow fadeInUp">{{ $position->nama }}</h4>
+                            <p class="text-dark">{{ $position->description }}</p>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>

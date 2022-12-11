@@ -10,10 +10,10 @@ class Clients
     {
         $menu->add('Clients', [
             'route' => 'boilerplate.clients',
-            'active' => 'boilerplate.clients',
+            'active' => 'boilerplate.clients,boilerplate.create-client,boilerplate.edit-client',
             'permission' => 'show_client',
             'icon' => 'handshake',
-            'order' => 100,
+            'order' => 1004,
         ]);
     }
 }

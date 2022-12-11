@@ -59,8 +59,6 @@
                                 <hr style="height:1px;border-width:0;color:gray;background-color:gray;margin-top: 0;margin-bottom: 0;">
                                 <a href="/about/structure" class="dropdown-item {{ Request::is('about/structure')? "active":"" }}">{{__("home.structure")}}</a>
                                 <hr style="height:1px;border-width:0;color:gray;background-color:gray;margin-top: 0;margin-bottom: 0;">
-                                <a href="/about/awards" class="dropdown-item {{ Request::is('about/awards')? "active":"" }}">{{__("home.awards")}}</a>
-                                <hr style="height:1px;border-width:0;color:gray;background-color:gray;margin-top: 0;margin-bottom: 0;">
 							</div>  <!-- col-megamenu.// -->
 						</div><!-- end col-3 -->
 						<div class="col-sm">
@@ -76,12 +74,7 @@
 					</div>
                 </div>
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle {{ Request::is('product')? "active":"" }}" data-bs-toggle="dropdown">{{__("home.product")}}</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="/product/readymix" class="dropdown-item">{{__("home.readymix")}}</a>
-                </div>
-            </div>
+            <a href="/product" class="nav-item nav-link {{ Request::is('product')? "active":"" }}">{{__("home.product")}}</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ Request::is('project/*')? "active":"" }}" data-bs-toggle="dropdown">{{__("home.project")}}</a>
                 <div class="dropdown-menu bg-light m-0">

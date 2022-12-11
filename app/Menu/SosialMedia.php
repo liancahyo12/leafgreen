@@ -10,10 +10,10 @@ class SosialMedia
     {
         $menu->add('Sosial Media', [
             'route' => 'boilerplate.socials',
-            'active' => 'boilerplate.socials',
+            'active' => 'boilerplate.socials,boilerplate.create-social,boilerplate.edit-social',
             'permission' => 'show_social',
             'icon' => 'share-nodes',
-            'order' => 100,
+            'order' => 1002,
         ]);
     }
 }

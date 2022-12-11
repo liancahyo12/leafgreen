@@ -11,8 +11,8 @@
     </strong>
     {{ __('boilerplate::layout.rightsres') }}
     <div class="float-right d-none d-sm-inline">
-        <a href="https://github.com/sebastienheyd/boilerplate">
-            Boilerplate
+        <a href="/">
+           PT Semen Indogreen Sentosa
         </a>
     </div>
 </footer>

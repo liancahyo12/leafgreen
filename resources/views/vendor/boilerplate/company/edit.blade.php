@@ -17,7 +17,27 @@
         <x-boilerplate::input name="tmixer" label="Truck Mixer*" value="{{ $company->tmixer }}" required />
         <x-boilerplate::input name="cpump" label="Concrete Pump*" value="{{ $company->cpump }}" required />
         <x-boilerplate::input name="wloader" label="Wheel Loader*" value="{{ $company->wloader }}" required />
-
+        <x-boilerplate-media-manager::image name="structure_org" label="Struktur Organisasi*" value="{{ $company->structure_org }}" required/>
+        <x-boilerplate::input name="visi" label="Visi Perusahaan*" value="{{ $company->visi }}" required />
+        <x-boilerplate::card title="Misi Perusahaan*" reduce collapsed>
+            <x-boilerplate::tinymce name="misi" value="{{ $company->misi }}">
+            </x-boilerplate::tinymce>
+        </x-boilerplate::card>
+        <x-boilerplate::card title="History*" reduce collapsed>
+            <x-boilerplate::tinymce name="history" value="{{ $company->history }}">
+            </x-boilerplate::tinymce>
+        </x-boilerplate::card>
+        <x-boilerplate::card title="Dewan Komisaris & Direksi*" reduce collapsed>
+            <x-boilerplate::tinymce name="profile" value="{{ $company->profile }}">
+            </x-boilerplate::tinymce>
+        </x-boilerplate::card>
+        <x-boilerplate::card title="Sambutan Direktur Utama*" reduce collapsed>
+            <x-boilerplate::tinymce name="ceo_greet" value="{{ $company->ceo_greet }}">
+            </x-boilerplate::tinymce>
+        </x-boilerplate::card>
+        
+        
+        
         <div class="row">
             &nbsp; &nbsp;
             {{ Form::submit('Kirim', array('class' => 'btn btn-primary', 'name' => 'submitbutton')) }}

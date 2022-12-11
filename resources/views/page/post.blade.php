@@ -3,7 +3,7 @@
     'subtitle' => __('home.media'),
     'breadcrumb' => [
         __('home.home') => 'home',
-        __('home.media') => 'media',
+        __('home.media') => 'blog',
         __( $post->title)
     ]
 ])

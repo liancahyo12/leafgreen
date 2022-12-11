@@ -10,10 +10,10 @@ class Portofolio
     {
         $menu->add('Portofolio', [
             'route' => 'boilerplate.portfolios',
-            'active' => 'boilerplate.portfolios',
+            'active' => 'boilerplate.portfolios,boilerplate.create-portfolio,boilerplate.edit-portfolio',
             'permission' => 'show_portfolio',
             'icon' => 'file-lines',
-            'order' => 100,
+            'order' => 1003,
         ]);
     }
 }

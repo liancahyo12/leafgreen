@@ -13,7 +13,7 @@ class Pages
             'active' => 'boilerplate.pages,boilerplate.create-page,boilerplate.edit-page',
             'permission' => 'show-pages',
             'icon' => 'file-lines',
-            'order' => 1001,
+            'order' => 1010,
         ]);
     }
 }

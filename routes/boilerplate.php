@@ -11,11 +11,14 @@ use App\Http\Controllers\Boilerplate\Select2Controller;
 use App\Http\Controllers\Boilerplate\Users\RolesController;
 use App\Http\Controllers\Boilerplate\Users\UsersController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\SosialMediaController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\AwardController;
+use App\Http\Controllers\CertificationController;
 
 Route::group([
     'prefix'     => config('boilerplate.app.prefix', ''),
@@ -125,22 +128,22 @@ Route::group([
             ->name('delete-post');
        
         // Pages
-        Route::get('/pages', [PagesController::class, 'index'])
+        Route::get('/pages', [PageController::class, 'index'])
             ->middleware(['boilerplateauth', 'ability:admin,show_page'])
             ->name('pages');
-        Route::get('/create-page', [PagesController::class, 'create'])
+        Route::get('/create-page', [PageController::class, 'create'])
             ->middleware(['boilerplateauth', 'ability:admin,create_page'])
             ->name('create-page');
-        Route::post('/create-page', [PagesController::class, 'store'])
+        Route::post('/create-page', [PageController::class, 'store'])
             ->middleware(['boilerplateauth', 'ability:admin,create_page'])
             ->name('store-page');
-        Route::get('/edit-page/{id}', [PagesController::class, 'edit'])
+        Route::get('/edit-page/{id}', [PageController::class, 'edit'])
             ->middleware(['boilerplateauth', 'ability:admin,edit_page'])
             ->name('edit-page');
-        Route::put('/edit-page/{id}', [PagesController::class, 'update'])
+        Route::put('/edit-page/{id}', [PageController::class, 'update'])
             ->middleware(['boilerplateauth', 'ability:admin,edit_page'])
             ->name('update-page');
-        Route::delete('/delete-page/{id}', [PagesController::class, 'destroy'])
+        Route::delete('/delete-page/{id}', [PageController::class, 'destroy'])
             ->middleware(['boilerplateauth', 'ability:admin,delete_page'])
             ->name('delete-page');
 
@@ -183,6 +186,26 @@ Route::group([
         Route::delete('/delete-portfolio/{id}', [PortfolioController::class, 'destroy'])
             ->middleware(['boilerplateauth', 'ability:admin,delete_portfolio'])
             ->name('delete-portfolio');
+
+        // Produk
+        Route::get('/product', [ProductController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_product'])
+            ->name('products');
+        Route::get('/create-product', [ProductController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_product'])
+            ->name('create-product');
+        Route::post('/create-product', [ProductController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_product'])
+            ->name('store-product');
+        Route::get('/edit-product/{id}', [ProductController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_product'])
+            ->name('edit-product');
+        Route::put('/edit-product/{id}', [ProductController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_product'])
+            ->name('update-product');
+        Route::delete('/delete-product/{id}', [ProductController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_product'])
+            ->name('delete-product');
         
         // Clients
         Route::get('/client', [ClientController::class, 'index'])
@@ -203,6 +226,46 @@ Route::group([
         Route::delete('/delete-client/{id}', [ClientController::class, 'destroy'])
             ->middleware(['boilerplateauth', 'ability:admin,delete_client'])
             ->name('delete-client');
+        
+        // Awards
+        Route::get('/award', [AwardController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_award'])
+            ->name('awards');
+        Route::get('/create-award', [AwardController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_award'])
+            ->name('create-award');
+        Route::post('/create-award', [AwardController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_award'])
+            ->name('store-award');
+        Route::get('/edit-award/{id}', [AwardController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_award'])
+            ->name('edit-award');
+        Route::put('/edit-award/{id}', [AwardController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_award'])
+            ->name('update-award');
+        Route::delete('/delete-award/{id}', [AwardController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_award'])
+            ->name('delete-award');
+
+        // Certification
+        Route::get('/certification', [CertificationController::class, 'index'])
+            ->middleware(['boilerplateauth', 'ability:admin,show_certification'])
+            ->name('certifications');
+        Route::get('/create-certification', [CertificationController::class, 'create'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_certification'])
+            ->name('create-certification');
+        Route::post('/create-certification', [CertificationController::class, 'store'])
+            ->middleware(['boilerplateauth', 'ability:admin,create_certification'])
+            ->name('store-certification');
+        Route::get('/edit-certification/{id}', [CertificationController::class, 'edit'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_certification'])
+            ->name('edit-certification');
+        Route::put('/edit-certification/{id}', [CertificationController::class, 'update'])
+            ->middleware(['boilerplateauth', 'ability:admin,edit_certification'])
+            ->name('update-certification');
+        Route::delete('/delete-certification/{id}', [CertificationController::class, 'destroy'])
+            ->middleware(['boilerplateauth', 'ability:admin,delete_certification'])
+            ->name('delete-certification');
 
         // Perusahaan
         Route::get('/company', [CompanyController::class, 'index'])
@@ -223,5 +286,10 @@ Route::group([
         Route::delete('/delete-company/{id}', [CompanyController::class, 'destroy'])
             ->middleware(['boilerplateauth', 'ability:admin,delete_company'])
             ->name('delete-company');
+
+        // File Manager
+        Route::group(['prefix' => 'fileman', 'middleware' => ['ability:admin,fileman']], function () {
+            \UniSharp\LaravelFilemanager\Lfm::routes();
+        });
     });
 });

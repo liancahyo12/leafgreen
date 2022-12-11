@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->string('tumbnail')->nullable();
             $table->string('tag')->nullable();
-            $table->string('content')->nullable();
+            $table->text('content')->nullable();
             $table->tinyInteger('post_status')->comment('1=draft, 2=published');
             $table->tinyInteger('status')->default('1');
         });

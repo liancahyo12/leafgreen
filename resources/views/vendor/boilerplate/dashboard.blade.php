@@ -1,9 +1,9 @@
 @extends('boilerplate::layout.index', [
     'title' => __('boilerplate::layout.dashboard'),
-    'subtitle' => 'Components & plugins demo',
-    'breadcrumb' => ['Components & plugins demo']]
+    'subtitle' => 'Selamat Datang',
+    'breadcrumb' => ['Selamat Datang']]
 )
 
 @section('content')
-    @include('boilerplate::plugins.demo')
+    
 @endsection
